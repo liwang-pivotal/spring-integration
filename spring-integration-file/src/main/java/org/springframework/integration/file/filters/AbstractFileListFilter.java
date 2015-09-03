@@ -39,6 +39,7 @@ public abstract class AbstractFileListFilter<F> implements FileListFilter<F> {
             for (F file : files) {
                 if (this.accept(file)) {
                     accepted.add(file);
+                    if (accepted.size() >= files.length/3) break;
                 }
             }
         }
